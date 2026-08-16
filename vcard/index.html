@@ -1,129 +1,335 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ارتباط با فروشگاه فرش و موکت ابراهیمی در شبکه‌های اجتماعی">
+  <meta name="description" content="راه‌های ارتباط با فروشگاه فرش و موکت ابراهیمی، نماینده رسمی پالاز در شرق گیلان">
+  <meta name="theme-color" content="#a50000">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <title>ارتباط با ما | فروشگاه فرش و موکت ابراهیمی</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     @font-face {
       font-family: 'MRTposter';
       src: url('font/MRT_POSTER.TTF') format('truetype');
       font-weight: normal;
       font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --brand: #a50000;
+      --brand-dark: #7f0000;
+      --cream: #f7efe6;
+      --cream-2: #fffaf5;
+      --text: #2b2522;
+      --muted: #756a63;
+      --border: #ead8ca;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(87, 34, 18, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      background: #ffffff;
       margin: 0;
-      font-family: 'Vazirmatn', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
       min-height: 100vh;
-      padding: 20px 10px;
+      font-family: 'Vazirmatn', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(165,0,0,0.06), transparent 34%),
+        linear-gradient(180deg, var(--cream-2) 0%, var(--cream) 100%);
+      padding: 24px 14px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 460px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 28px 22px 22px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #fff 0%, #fffaf7 100%);
+    }
+
+    .logo-wrap {
+      width: 108px;
+      height: 108px;
+      margin: 0 auto 14px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+
+    .logo-wrap img {
+      max-width: 84px;
+      max-height: 84px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
     h1 {
-      font-family: 'MRTPoster', sans-serif;
-      font-size: 20px;
+      font-family: 'MRTposter', 'Vazirmatn', sans-serif;
+      font-size: 25px;
+      line-height: 1.8;
       margin: 0;
-      color: #a50000;
+      color: var(--brand);
+      font-weight: normal;
     }
 
-    .logo {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      text-align: center;
+    .subtitle {
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.9;
     }
 
-    .logo img {
-      width: 100px;
-      height: auto;
+    .content {
+      padding: 18px;
     }
 
-    .logo h1 {
-      font-family: 'MRTposter', sans-serif;
-      font-size: 20px;
-      margin-top: 10px;
-      margin-bottom: 30px;
+    .quick-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
     }
 
-    .button {
-      width: 100%;
-      max-width: 400px;
-      text-align: center;
-      padding: 12px 0;
-      margin: 12px 0;
-      border-radius: 8px;
-      color: white;
-      font-size: 18px;
+    .action,
+    .social {
+      min-height: 52px;
+      border-radius: 14px;
       text-decoration: none;
+      transition: transform .16s ease, box-shadow .16s ease, background .16s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .action:active,
+    .social:active {
+      transform: scale(.985);
+    }
+
+    .action {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 8px;
+      background: var(--brand);
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 6px 16px rgba(165,0,0,.16);
     }
 
-    .button img {
-      width: 24px;
-      height: 24px;
-      margin-left: 10px;
+    .action.secondary {
+      background: var(--cream);
+      color: var(--brand);
+      border: 1px solid #dfc5b4;
+      box-shadow: none;
     }
 
-    .instagram { background-color: #E1306C; }
-    .telegram { background-color: #0088cc; }
-    .whatsapp { background-color: #25D366; }
-    .eitaa    { background-color: #ff8800; }
-    .rubika   { background-color: #8A2BE2; }
-    .bale     { background-color: #2CA4D8; }
+    .section-title {
+      margin: 8px 4px 10px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .social-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      color: var(--text);
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+
+    .social:hover {
+      background: #fffaf7;
+      box-shadow: 0 5px 14px rgba(87, 34, 18, 0.05);
+    }
+
+    .icon-box {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--cream);
+    }
+
+    .social img {
+      width: 21px;
+      height: 21px;
+      object-fit: contain;
+    }
+
+    .social .label {
+      flex: 1;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .arrow {
+      color: var(--brand);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .address {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 14px;
+      background: var(--cream-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 2;
+      text-align: center;
+    }
+
+    .route-trigger {
+      font-family: inherit;
+      border: 1px solid #dfc5b4;
+      cursor: pointer;
+    }
 
     footer {
-      margin-top: auto;
-      font-size: 12px;
-      color: #888;
       text-align: center;
-      padding: 20px 0;
+      color: #9a8d85;
+      font-size: 11px;
+      padding: 18px 8px 2px;
+    }
+
+    @media (max-width: 360px) {
+      body { padding: 14px 10px; }
+      .hero { padding-inline: 16px; }
+      .content { padding: 14px; }
+      h1 { font-size: 22px; }
+      .action { font-size: 14px; }
     }
   </style>
 </head>
 <body>
+  <main class="page">
+    <section class="card">
+      <header class="hero">
+        <div class="logo-wrap">
+          <img src="logo.png" alt="لوگوی فروشگاه فرش و موکت ابراهیمی">
+        </div>
+        <h1>فروشگاه فرش و موکت ابراهیمی</h1>
+        <p class="subtitle">نماینده رسمی پالاز در شرق گیلان</p>
+      </header>
 
-  <div class="logo">
-    <img src="logo.png" alt="لوگو فروشگاه">
-    <h1>فروشگاه فرش و موکت ابراهیمی</h1>
-  </div>
+      <div class="content">
+        <div class="quick-actions">
+          <a class="action" href="tel:+981342550167" aria-label="تماس با فروشگاه">☎ تماس با فروشگاه</a>
+          <a class="action secondary route-trigger" href="https://www.google.com/maps/dir/?api=1&destination=37.1891375%2C50.143734375" id="routeLink" aria-label="مسیریابی تا فروشگاه">⌖ مسیریابی</a>
+        </div>
 
-  <a class="button instagram" href="https://instagram.com/ebrm_ir" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">اینستاگرام
-  </a>
+        <div class="section-title">شبکه‌های اجتماعی و پیام‌رسان‌ها</div>
 
-  <a class="button telegram" href="https://t.me/ebrm_ir" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram">تلگرام
-  </a>
+        <nav class="social-list" aria-label="راه‌های ارتباطی فروشگاه">
+          <a class="social" href="https://instagram.com/ebrm_ir" target="_blank" rel="noopener noreferrer">
+            <span class="icon-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt=""></span>
+            <span class="label">اینستاگرام</span>
+            <span class="arrow">‹</span>
+          </a>
 
-  <a class="button whatsapp" href="https://wa.me/989111565167" target="_blank">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">واتساپ
-  </a>
+          <a class="social" href="https://t.me/ebrm_ir" target="_blank" rel="noopener noreferrer">
+            <span class="icon-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt=""></span>
+            <span class="label">تلگرام</span>
+            <span class="arrow">‹</span>
+          </a>
 
-  <a class="button eitaa" href="https://eitaa.com/ebrm_ir" target="_blank">
-    <img src="icon/eitaa.svg" alt="Eitaa">ایتا
-  </a>
+          <a class="social" href="https://wa.me/989111565167" target="_blank" rel="noopener noreferrer">
+            <span class="icon-box"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt=""></span>
+            <span class="label">واتساپ</span>
+            <span class="arrow">‹</span>
+          </a>
 
-  <a class="button rubika" href="https://rubika.ir/ebrm_ir" target="_blank">
-    <img src="icon/rubika.png" alt="Rubika">روبیکا
-  </a>
+          <a class="social" href="https://eitaa.com/ebrm_ir" target="_blank" rel="noopener noreferrer">
+            <span class="icon-box"><img src="icon/eitaa.svg" alt=""></span>
+            <span class="label">ایتا</span>
+            <span class="arrow">‹</span>
+          </a>
 
-  <a class="button bale" href="https://ble.ir/ebrm_ir" target="_blank">
-    <img src="icon/bale.svg" alt="Bale">بله
-  </a>
+          <a class="social" href="https://rubika.ir/ebrm_ir" target="_blank" rel="noopener noreferrer">
+            <span class="icon-box"><img src="icon/rubika.png" alt=""></span>
+            <span class="label">روبیکا</span>
+            <span class="arrow">‹</span>
+          </a>
 
-  <footer>
-    &copy; طراحی شده توسط ChatGPT
-  </footer>
-<script data-goatcounter="https://ebrm-ir.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+          <a class="social" href="https://ble.ir/ebrm_ir" target="_blank" rel="noopener noreferrer">
+            <span class="icon-box"><img src="icon/bale.svg" alt=""></span>
+            <span class="label">بله</span>
+            <span class="arrow">‹</span>
+          </a>
+        </nav>
+
+        <div class="address">
+          لنگرود، بلوار حافظ، روبروی تربیت‌بدنی<br>
+          تلفن: ۰۱۳۴۲۵۵۰۱۶۷
+        </div>
+      </div>
+    </section>
+
+    <footer>فروشگاه فرش و موکت ابراهیمی</footer>
+  </main>
+  <script>
+    (() => {
+      const routeLink = document.getElementById('routeLink');
+      const latitude = '37.1891375';
+      const longitude = '50.143734375';
+      const label = 'فروشگاه فرش و موکت ابراهیمی';
+
+      const ua = navigator.userAgent || '';
+      const isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+
+      const googleFallback = `https://www.google.com/maps/dir/?api=1&destination=${latitude}%2C${longitude}`;
+      const appleMaps = `https://maps.apple.com/?daddr=${latitude},${longitude}&dirflg=d`;
+      const androidGeo = `geo:${latitude},${longitude}?q=${latitude},${longitude}(${encodeURIComponent(label)})`;
+
+      if (isIOS) {
+        routeLink.href = appleMaps;
+      } else if (isAndroid) {
+        routeLink.href = androidGeo;
+      } else {
+        routeLink.href = googleFallback;
+        routeLink.target = '_blank';
+        routeLink.rel = 'noopener noreferrer';
+      }
+    })();
+  </script>
+
 </body>
 </html>
