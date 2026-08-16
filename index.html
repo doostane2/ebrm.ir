@@ -3,120 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="فروشگاه فرش و موکت ابراهیمی، نمایندگی رسمی پالاز موکت در شرق گیلان. ارائه‌دهنده انواع فرش کلاسیک، فانتزی، گلیم، پادری و روفرشی." />
-  <meta name="keywords" content="لنگرود, پالاز, پالازموکت, فرش, موکت, فرش بلوچ, گلیم, پادری, روفرشی, رودسر, کلاچای, چابکسر, گیلان, فرش فانتزی, فرش کلاسیک" />
+  <meta name="description" content="فروشگاه فرش و موکت ابراهیمی، نماینده رسمی پالاز موکت در شرق گیلان. عرضه‌کننده پالاز موکت، گلیم، فرش فانتزی و پادری در لنگرود." />
+  <meta name="keywords" content="لنگرود, پالاز, پالاز موکت, فرش, موکت, گلیم, پادری, فرش فانتزی, شرق گیلان, رودسر, کلاچای, چابکسر" />
   <meta name="author" content="فروشگاه فرش و موکت ابراهیمی" />
+  <meta property="og:title" content="فروشگاه فرش و موکت ابراهیمی" />
+  <meta property="og:description" content="نماینده رسمی پالاز موکت در شرق گیلان" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ebrm.ir/" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <title>فروشگاه فرش و موکت ابراهیمی</title>
+
   <style>
-    /* فونت MRT Poster */
     @font-face {
       font-family: 'MRTPoster';
       src: url('Font/MRT_POSTER.TTF') format('truetype');
+      font-display: swap;
     }
 
-    /* فونت وزیر از CDN */
     @font-face {
       font-family: 'Vazir';
       src: url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir-Regular.woff2') format('woff2');
+      font-display: swap;
     }
+
+    :root {
+      --brand: #a50000;
+      --brand-dark: #7d0000;
+      --cream: #f8f2eb;
+      --text: #292929;
+      --muted: #6f6f6f;
+      --border: #eaded4;
+    }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      padding: 0;
-      background-color: white;
+      min-height: 100vh;
+      background: #fff;
+      color: var(--text);
+      font-family: 'Vazir', sans-serif;
+    }
+
+    main {
+      width: min(100% - 32px, 860px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 44px 0 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      width: clamp(120px, 24vw, 190px);
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'MRTPoster', 'Vazir', sans-serif;
+      font-size: clamp(30px, 6vw, 48px);
+      line-height: 1.5;
+      color: var(--brand);
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      font-size: clamp(16px, 3vw, 21px);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .coming-soon {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: var(--cream);
+      color: var(--brand);
+      border: 1px solid var(--border);
+      font-size: 14px;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin: 22px auto 0;
+      font-size: 15px;
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    .categories {
+      width: 100%;
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .category {
+      padding: 14px 8px;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 14px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .cta-wrap { margin-top: 28px; }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 220px;
+      padding: 13px 22px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 700;
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .cta:hover {
+      background: var(--brand-dark);
+      transform: translateY(-1px);
+    }
+
+    .cta-hint {
+      margin: 9px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .social-icons {
+      margin-top: 24px;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      text-align: center;
-    }
-    .logo {
-      width: 200px;
-      height: 200px;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
-    
-    h1 {
-      font-family: 'MRTPoster', sans-serif;
-      font-size: 48px;
-      margin: 0;
-      color: #a50000;
+      gap: 20px;
     }
 
-    p {
-      font-family: 'Vazir', sans-serif;
-      font-size: 24px;
-      margin-top: 10px;
-      color: #666;
-    }
-    .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.festival-logo {
-  width: 300px;
-  height: 200px;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .festival-logo {
-    margin-top: 20px; /* بیاد زیر "به زودی ..." */
-  }
-}
-   .social-icons {
-      margin-top: 20px;
+    .social-icons a {
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 25px;
+      width: 44px;
+      height: 44px;
     }
+
     .social-icons img {
-      width: 50px;
-      height: 50px;
-      transition: transform 0.3s ease;
+      max-width: 42px;
+      max-height: 42px;
+      transition: transform .2s ease;
     }
-    .social-icons img:hover {
-      transform: scale(1.2);
-    }
+
+    .social-icons img:hover { transform: scale(1.08); }
+
     .social-icons .telegram {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
+    }
+
+    footer {
+      margin-top: 28px;
+      color: #999;
+      font-size: 11px;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        justify-content: flex-start;
+        padding-top: 28px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .intro { font-size: 14px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-  <div class="right">
-  <img src="logo200.png" class="logo" />
-  <h1>فروشگاه فرش و موکت ابراهیمی</h1>
-  <p>به زودی ...</p>
- </div>
-</div>
- <div class="social-icons">
-    <a href="https://t.me/ebrm_ir" target="_blank" title="تلگرام">
-      <img src="tglogo.png" alt="تلگرام" class="telegram">
-    </a>
-    <a href="https://instagram.com/ebrm_ir" target="_blank" title="اینستاگرام">
-      <img src="iglogo.png" alt="اینستاگرام">
-    </a>
-    <a href="https://wa.me/989111565167" target="_blank" title="واتساپ">
-      <img src="walogo.png" alt="واتساپ">
-    </a>
-  </div>
+  <main>
+    <img src="logo200.png" class="logo" alt="لوگوی فروشگاه فرش و موکت ابراهیمی" />
+
+    <h1>فروشگاه فرش و موکت ابراهیمی</h1>
+    <p class="subtitle">نماینده رسمی پالاز موکت در شرق گیلان</p>
+
+    <span class="coming-soon">وب‌سایت کامل فروشگاه به‌زودی</span>
+
+    <p class="intro">
+      در حال آماده‌سازی نسخه کامل وب‌سایت هستیم.
+      تا آن زمان می‌توانید برای آشنایی با راه‌های ارتباطی، تماس با فروشگاه
+      و مسیریابی، از صفحه ارتباط با ما استفاده کنید.
+    </p>
+
+    <section class="categories" aria-label="دسته‌بندی محصولات">
+      <div class="category">پالاز موکت</div>
+      <div class="category">گلیم</div>
+      <div class="category">فرش فانتزی</div>
+      <div class="category">پادری</div>
+      <div class="category">روفرشی</div>
+      <div class="category">روپله‌ای</div>
+    </section>
+
+    <div class="cta-wrap">
+      <a class="cta" href="/vcard">ارتباط با ما</a>
+      <p class="cta-hint">تماس، شبکه‌های اجتماعی و آدرس فروشگاه</p>
+    </div>
+
+    <footer>ebrm.ir</footer>
+  </main>
+
   <script data-goatcounter="https://mainebrm.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+          async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
-
-
-
